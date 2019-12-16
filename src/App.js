@@ -1,18 +1,20 @@
 //根应用
-import React, { Component } from "react";
-import { BrowserRouter, Route,Switch } from "react-router-dom";
+import React from "react";
+import {BrowserRouter   , Route, Switch } from "react-router-dom";
 import Login from "./pages/login/login";
 import Admin from "./pages/admin/admin";
-export default class App extends Component {
+
+export default class App extends React.Component {
   render() {
     return (
-
       <BrowserRouter>  
-      <Switch> 
-        <Route path="/login" Component={Login}></Route> 
-        <Route path="/" Component={Admin}></Route>
-        </Switch>
-      </BrowserRouter>
+          <div>
+            <Switch>  
+              <Route exact path='/' component={Admin} />  
+              <Route path="/login" component={Login} />
+            </Switch>
+          </div>
+        </BrowserRouter>
     );
   }
 }
